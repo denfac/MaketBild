@@ -1,0 +1,430 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #6e8efb, #a777e3) !important; /* Added !important to prevent overrides */
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+footer a {
+    color: #ff6f61;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.auth-section {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.auth-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.auth-section label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    text-align: left;
+}
+
+.auth-section input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.auth-section button {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-section button:hover {
+    background-color: #e65b50;
+}
+
+#message {
+    margin-top: 1rem;
+    color: #e74c3c;
+}
+
+.toolbar {
+    background: #34495e;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tools-left button, .tools-right button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.2rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background: #3498db;
+    color: white;
+    transition: background 0.2s;
+}
+
+.tools-left button:hover, .tools-right button:hover {
+    background: #2980b9;
+}
+
+#delete-element {
+    background: #e74c3c;
+}
+
+#delete-element:hover {
+    background: #c0392b;
+}
+
+.main-editor {
+    flex: 1;
+    display: flex;
+    padding: 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.canvas {
+    flex: 3;
+    background: white;
+    border: 2px dashed #ccc;
+    min-height: 500px;
+    position: relative;
+}
+
+.properties {
+    flex: 1;
+    background: #f7f9f9;
+    padding: 1rem;
+    margin-left: 1rem;
+    border-radius: 5px;
+}
+
+.properties h3 {
+    margin-bottom: 1rem;
+}
+
+.properties label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+.properties input {
+    width: 100%;
+    padding: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #777;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.template-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+}
+
+.template-card {
+    background: #f7f9f9;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.template-card:hover {
+    border-color: #3498db;
+    transform: scale(1.05);
+}
+
+#project-list, #request-list {
+    list-style: none;
+}
+
+#project-list li, #request-list li {
+    background: #f7f9f9;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#project-list button, #request-list button {
+    padding: 0.3rem 0.6rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#project-list button.delete, #request-list button.delete {
+    background: #e74c3c;
+}
+
+#submit-request {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#submit-request:hover {
+    background: #2980b9;
+}
+
+#request-project-id {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#change-password {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.admin-section {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.admin-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.admin-section .table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.admin-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.admin-section th, .admin-section td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.admin-section th {
+    background-color: #34495e;
+    color: white;
+}
+
+.admin-section tr:nth-child(even) {
+    background-color: #f7f9f9;
+}
+
+.admin-section tr:hover {
+    background-color: #e0e0e0;
+}
+
+.admin-section select {
+    padding: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: white;
+}
+
+.admin-section button {
+    padding: 0.3rem 0.6rem;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.admin-section button:hover {
+    background: #c0392b;
+}
+
+.admin-section button.approve {
+    background: #2ecc71;
+}
+
+.admin-section button.approve:hover {
+    background: #27ae60;
+}
+
+#back-to-editor {
+    padding: 0.5rem 1rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#back-to-editor:hover {
+    background: #2980b9;
+}
+.scrollable-table {
+    max-height: 300px; /* Фиксированная максимальная высота, можно настроить */
+    overflow-y: auto; /* Вертикальная прокрутка */
+    overflow-x: auto; /* Горизонтальная прокрутка при необходимости */
+    display: block; /* Чтобы прокрутка работала */
+}
+
+table {
+    width: 100%; /* Таблица занимает всю доступную ширину */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.admin-section {
+    margin-bottom: 20px;
+}
+
+/* Дополнительные стили для формы, если нужно */
+#email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+}
+
+#email-subject, #email-body {
+    padding: 8px;
+}
+
+#email-status {
+    margin-top: 5px;
+}

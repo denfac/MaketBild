@@ -1,0 +1,232 @@
+/* Десктопы (≥1024px) */
+@media (min-width: 1024px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .features {
+        max-width: 600px;
+    }
+
+    .auth-section {
+        max-width: 400px;
+        padding: 2rem;
+    }
+
+    .admin-section {
+        max-width: 800px;
+        padding: 2rem;
+    }
+
+    .toolbar {
+        flex-direction: row;
+    }
+
+    .tools-left, .tools-right {
+        flex-direction: row;
+    }
+
+    .main-editor {
+        flex-direction: row;
+    }
+
+    .properties {
+        margin-left: 1rem;
+    }
+
+    .template-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+/* Планшеты (768px–1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .features {
+        max-width: 500px;
+        padding: 1.5rem;
+    }
+
+    .auth-section {
+        max-width: 350px;
+        padding: 1.5rem;
+    }
+
+    .admin-section {
+        max-width: 700px;
+        padding: 1.5rem;
+    }
+
+    .toolbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .tools-left, .tools-right {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .tools-left button, .tools-right button {
+        margin: 0.3rem;
+    }
+
+    .main-editor {
+        flex-direction: row;
+    }
+
+    .canvas {
+        min-height: 400px;
+    }
+
+    .properties {
+        margin-left: 0.5rem;
+    }
+
+    .template-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Мобильные устройства (≤767px) */
+@media (max-width: 767px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .features {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .features h3 {
+        font-size: 1.3rem;
+    }
+
+    .features li {
+        font-size: 1rem;
+    }
+
+    .auth-section {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .admin-section {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tools-left, .tools-right {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .tools-left button, .tools-right button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .main-editor {
+        flex-direction: column;
+    }
+
+    .canvas {
+        margin-bottom: 1rem;
+        min-height: 300px;
+    }
+
+    .properties {
+        margin-left: 0;
+    }
+
+    .template-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1rem;
+    }
+}
+
+/* Очень маленькие экраны (≤576px) */
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .features h3 {
+        font-size: 1.2rem;
+    }
+
+    .features li {
+        font-size: 0.9rem;
+    }
+
+    .auth-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .auth-section input, .auth-section button {
+        font-size: 0.9rem;
+    }
+
+    .admin-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .admin-section th, .admin-section td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .admin-section select, .admin-section button {
+        font-size: 0.9rem;
+    }
+}

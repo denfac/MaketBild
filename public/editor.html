@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МакетБилд</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/responsive.css">
+</head>
+<body>
+    <header>
+        <h1>МакетБилд</h1>
+        <div class="user-info"></div>
+        <button id="back-to-editor" style="display: none;">Вернуться в редактор</button>
+        <button id="logout-btn">🚪 Выйти</button>
+    </header>
+
+    <main>
+        <div class="toolbar">
+            <div class="tools-left">
+                <button id="add-text">✍️ Текст</button>
+                <button id="add-button">🔘 Кнопка</button>
+                <button id="add-image">🖼️ Изображение</button>
+                <button id="add-block">▦ Блок</button>
+                <button id="delete-element">🗑️ Удалить</button>
+            </div>
+            <div class="tools-right">
+                <button id="save-project">💾 Сохранить на сервере</button>
+                <button id="download-project">⬇️ Скачать проект</button>
+                <button id="send-email">📧 Отправить</button>
+                <button id="template-select">🎨 Шаблоны</button>
+                <button id="profile">👤 Профиль</button>
+                <button id="admin-panel" style="display: none;">🛠️ Админ-панель</button>
+            </div>
+        </div>
+
+        <div class="main-editor">
+            <canvas id="canvas" class="canvas"></canvas>
+            <div class="properties">
+                <h3>Свойства элемента</h3>
+                <label>X: <input id="prop-x" type="number" disabled></label>
+                <label>Y: <input id="prop-y" type="number" disabled></label>
+                <label>Ширина: <input id="prop-width" type="number" disabled></label>
+                <label>Высота: <input id="prop-height" type="number" disabled></label>
+                <label>Текст: <input id="prop-text" disabled></label>
+                <label>Цвет: <input id="prop-color" type="color" disabled></label>
+                <label>Ссылка на изображение: <input id="prop-image-src" disabled></label>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Контакты: info@maketbuild.ru | +7 (999) 123-45-67
+        <br>
+        Создаем сайты вашей мечты!
+    </footer>
+
+    <div id="template-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Выберите шаблон</h2>
+            <div class="template-gallery">
+                <div class="template-card" data-template="landing">Лендинг</div>
+                <div class="template-card" data-template="blog">Блог</div>
+                <div class="template-card" data-template="portfolio">Портфолио</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Личный кабинет</h2>
+            <h3>Проекты</h3>
+            <ul id="project-list"></ul>
+            <h3>Новая заявка на проект</h3>
+            <select id="request-project-id">
+                <option value="">-- Выберите проект --</option>
+            </select>
+            <button id="submit-request">Отправить заявку</button>
+            <h3>Мои заявки</h3>
+            <ul id="request-list"></ul>
+            <button id="change-password">Изменить пароль</button>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
